@@ -4,6 +4,7 @@ http://www.amazon.com/dp/1512214566/
 Updates:
 1.0 Initial Copy
 1.1 Added HexChat installation command
+1.2 Creating a normal user with sudo permissions
 
 Since this book is based off of the Kali Linux platform, you can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
@@ -241,6 +242,24 @@ Phishing (Optional):
 
 Extras from Belouve:
 
+Create a new normal user with sudo permission in Kali Linux
+●	Open a terminal and issue the following command:
+	●	useradd -m belouve
+	●	-m creates a home directory for the user (belouve in this example).
+●	Now we have to set a password for the user.
+	●	passwd belouve
+	●	It will ask you to create a new password. </li>
+●	At this point, we have a new user account. But we might want to add our new user to the “sudoers” group, so that we can use “sudo” to do administrative actions.
+	●	usermod -a -G sudo belouve
+	●	The option -a means to add and ‘-G sudo’ means to add the user to the sudo group. If you want to know more about the usermod command, issue  #man usermod command to know more about usermod</li>
+●	Now we have to specify the shell for our new user.
+	●	chsh -s /bin/bash belouve
+	●	chsh command is used to change the login shell for a user. </li>
+●	All done.! you are all set. You could logout and login to your new account.
+
+
 HexChat
 ●	IRC Client
 ●	apt update && apt install -y hexchat
+
+
