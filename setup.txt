@@ -261,5 +261,8 @@ Create a new normal user with sudo permission in Kali Linux
 HexChat
 ●	IRC Client
 ●	apt update && apt install -y hexchat
-
+●	Then theme it by grabbing theme of https://dl.hexchat.net/themes/MatriY.hct
+●	More themes at https://hexchat.github.io/themes.html
+●	unzip ~/Downloads/MatriY.hct -d ~/.config/hexchat
+●	/.config is a hidden folder in your Home directory /home/belouve
 
