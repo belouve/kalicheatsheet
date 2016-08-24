@@ -1,6 +1,10 @@
 The Hacker Playbook 2
 http://www.amazon.com/dp/1512214566/
 
+Updates:
+1.0 Initial Copy
+1.1 Added HexChat installation command
+
 Since this book is based off of the Kali Linux platform, you can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
 Once Your Kali VM is Up and Running
@@ -234,3 +238,9 @@ Phishing (Optional):
 	○	git clone https://github.com/macubergeek/gitlist.git /opt/gitlist
 
 *Remember to check http://thehackerplaybook.com/updates/ for any updates.
+
+Extras from Belouve:
+
+HexChat
+●	IRC Client
+●	apt update && apt install -y hexchat
