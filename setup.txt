@@ -1,12 +1,17 @@
-The Hacker Playbook 2
-http://www.amazon.com/dp/1512214566/
-
 Updates:
 1.0 Initial Copy
 1.1 Added HexChat installation command
 1.2 Creating a normal user with sudo permissions
+1.3 Tidying, added detail of Chromium and wmap
+.: You can find me on Twitter @ulicbelouve :.
 
-Since this book is based off of the Kali Linux platform, you can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
+You can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
+
+A lot of info is derived from The Hacker Playbook 2
+http://www.amazon.com/dp/1512214566/
+I have a signed copy, and I intend to get a non-signed copy to bang around and make notes in.
+
+Installation and configuration for Kali Linux is not really "plug and play"...so here are a bunch of config notes.
 
 Once Your Kali VM is Up and Running
 ●	Log in with the username root and the default password toor
@@ -223,6 +228,35 @@ Installing Firefox Add-ons
 ●	Tamper Data: https://addons.mozilla.org/en-US/firefox/addon/tamper-data/
 ●	Foxy Proxy: https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ●	User Agent Switcher: https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/
+●	You can reboot your browser now
+
+Installing Chromium
+●	Chromium is "an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web." I (@ulicbelouve) am a fan of Firefox, but this is another option, with wmap (see below)
+●	Open the terminal and type "apt-get install chromium"​
+●	Type 'y' and hit the return key when prompted for confirmation
+
+Configure Chromium / wmap
+●	If Chromium is opened, it will close in the background without apparent error.  The following configuration will allow Chromium to function with wmap.
+●	wmap is a mass web screenshot tool for mapping out large web networks. Feed it a list of URL(s) and/or Nmap scan data and it will generate you a screenshot report of those web services. Created to allow people to get a visual "map" of their web infrastructure.
+●	​​Edit the following file: /etc/chromium.d/default-flags
+●	Add the following entries to the default-flags file
+	  export CHROMIUM_FLAGS="$CHROMIUM_FLAGS ​--no-sandbox"​
+	  export CHROMIUM_FLAGS="$CHROMIUM_FLAGS -user-data-dir"​​​
+	     This line is necessary in order for Chromium to work in Kali because Kali runs as root
+	  export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --ignore-certificate-er​rors"
+	     This line is necessary to make wmap work as well as possible.  If wmap is not needed, then this line is 
+	     not needed
+●	Launch Chromium
+●	A prompt may load explicitly stating that it is a bad idea to run chromium as root.  Ignore this
+	  ​The known way around this issue would be to designate a user specifically for chromium usage
+●	You can see my additions below, on how to "Create a new normal user with sudo permission in Kali Linux", then it should not balk at the oversight
+●	​If Chromium does not start, validate that the entries in the default-flags file are correct
+
+Installing wmap
+●	​Go to the webstore (url: https://chrome.google.com/webstore/)
+●	Search for wmap
+●	Click "ADD TO CHROME"
+●	A pop up should appear asking for confirmation to Add "wmap".  Click "Add extension"
 
 Wifite
 ●	Attacks against WiFi networks
@@ -239,6 +273,8 @@ Phishing (Optional):
 	○	git clone https://github.com/macubergeek/gitlist.git /opt/gitlist
 
 *Remember to check http://thehackerplaybook.com/updates/ for any updates.
+
+It is also recommended to configure a Windows Virtual Machine.  This will be detailed in a separate "cheat sheet"
 
 Extras from Belouve:
 
@@ -265,4 +301,3 @@ HexChat
 ●	More themes at https://hexchat.github.io/themes.html
 ●	unzip ~/Downloads/MatriY.hct -d ~/.config/hexchat
 ●	/.config is a hidden folder in your Home directory /home/belouve
-
