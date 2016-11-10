@@ -13,6 +13,9 @@ I have a signed copy, and I intend to get a non-signed copy to bang around and m
 
 Installation and configuration for Kali Linux is not really "plug and play"...so here are a bunch of config notes.
 
+For your VM, you may need some extra tools.
+●	Oracle VM VirtualBox Extension Pack ( https://www.virtualbox.org/wiki/Downloads )
+
 Once Your Kali VM is Up and Running
 ●	Log in with the username root and the default password toor
 ●	Open a terminal
@@ -26,13 +29,16 @@ Once Your Kali VM is Up and Running
 ●	Make postgresql database start on boot
 	○	update-rc.d postgresql enable
 ●	Start and stop the Metasploit service (this will setup the database.yml file for you)
-	○	service metasploit start
+	○	service metasploit start (this threw an error in most recent run...will investigate)
 	○	service metasploit stop
 ●	Install gedit
 	○	apt-get install gedit
+●	After this I did a apt autoremove as cleanup...I'll see if that negatively impacted anything
+
 ●	Change the hostname - Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
 	○	gedit /etc/hostname
 		■	Change the hostname (replace kali) and save
+		■	I like to rename it loki, the trickster.  Or REDSHIRT, for a test box.  "REDSHIRT is down" is a great error message.
 	○	gedit /etc/hosts
 		■	Change the hostname (replace kali) and save
 	○	reboot
@@ -41,6 +47,8 @@ Once Your Kali VM is Up and Running
 	○	From a command prompt, type:
 		■	echo “spool /root/msf_console.log” > /root/.msf4/msfconsole.rc
 	○	Logs will be stored at /root/msf_console.log
+
+Now may be a good time to setup a new normal user to be able to use sudo, and not run everything as root
 
 Tool Installation
 The Backdoor Factory:
@@ -284,13 +292,13 @@ Create a new normal user with sudo permission in Kali Linux
 	●	-m creates a home directory for the user (belouve in this example).
 ●	Now we have to set a password for the user.
 	●	passwd belouve
-	●	It will ask you to create a new password. </li>
+	●	It will ask you to create a new password. 
 ●	At this point, we have a new user account. But we might want to add our new user to the “sudoers” group, so that we can use “sudo” to do administrative actions.
 	●	usermod -a -G sudo belouve
-	●	The option -a means to add and ‘-G sudo’ means to add the user to the sudo group. If you want to know more about the usermod command, issue  #man usermod command to know more about usermod</li>
+	●	The option -a means to add and ‘-G sudo’ means to add the user to the sudo group. If you want to know more about the usermod command, issue  #man usermod command to know more about usermod
 ●	Now we have to specify the shell for our new user.
 	●	chsh -s /bin/bash belouve
-	●	chsh command is used to change the login shell for a user. </li>
+	●	chsh command is used to change the login shell for a user. 
 ●	All done.! you are all set. You could logout and login to your new account.
 
 
@@ -301,3 +309,10 @@ HexChat
 ●	More themes at https://hexchat.github.io/themes.html
 ●	unzip ~/Downloads/MatriY.hct -d ~/.config/hexchat
 ●	/.config is a hidden folder in your Home directory /home/belouve
+
+Setting proxies:
+Acquire::http::proxy  "http://10.EXA.MPL.E0:3128/";
+Acquire::ftp::proxy "http://10.EXA.MPL.E0:8080/";
+Acquire::https::proxy "http://10.EXA.MPL.E0:8080/";
+●	Hey guess what? You need to have the ; at the end of each line
+●	3128 is HTTP proxy, 8080 is HTTP, 443 is HTTPS over SSL
