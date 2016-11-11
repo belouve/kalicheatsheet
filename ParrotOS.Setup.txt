@@ -1,0 +1,48 @@
+Parrot Security ( https://www.parrotsec.org/features.fx )
+Security GNU/Linux distribution designed with cloud pentesting and IoT security in mind.
+
+It includes a full portable laboratory for security and digital forensics experts, but it also includes all you need to develop your own software or protect your privacy with anonymity and crypto tools.
+
+.:This will be another setup guide:.
+
+Versions and Updates
+1.0 Initial Document
+
+
+The install process will have you do a few things:
+●    Create a root password (so we don't have the default toor)
+●    Create a new normal user, with their own password (so you don't run things as root all the time)
+●    If you encrypt that VM hard drive (and you should), you will set an Encryption passphrase
+
+Display Resolution
+●    System -> Preferences -> Hardware -> Displays
+●    It defaults to 1024x768
+●    Only has a few choices ... investigating how to force a better resolution
+Research on this so far:
+
+
+    Use cvt to calculate the parameters needed by xrandr:
+
+    cvt 1366 768
+
+    example output:
+
+    # 1368x768 59.88 Hz (CVT) hsync: 47.79 kHz; pclk: 85.25 MHz
+    Modeline "1368x768_60.00"   85.25  1368 1440 1576 1784  768 771 781 798 -hsync +vsync
+
+    build the xrandr command with the output of cvt:
+
+    xrandr --newmode "1366x768" 85.25  1368 1440 1576 1784  768 771 781 798 -Hsync +Vsync
+
+    please note Hsync and Vsync capitalized. I needed to do that to get things working on some systems
+
+    Add a newmode in xrandr:
+
+    xrandr --addmode VGA1 "1366x768"
+
+    Replace VGA1 as needed
+
+    Enable the new resolution:
+
+    xrandr --output VGA1 --mode "1366x768"
+
