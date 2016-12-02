@@ -14,6 +14,17 @@ The install process will have you do a few things:
 ●    Create a new normal user, with their own password (so you don't run things as root all the time)
 ●    If you encrypt that VM hard drive (and you should), you will set an Encryption passphrase
 
+You will want to add the main online repository: edit /etc/apt/sources.list (as root, e.g. with sudoedit) and add the lines
+
+deb http://ftp.debian.org/debian jessie main non-free contrib
+deb-src http://ftp.debian.org/debian jessie main non-free contrib
+deb http://ftp.debian.org/debian jessie-updates main contrib non-free
+deb-src http://ftp.debian.org/debian jessie-updates main contrib non-free
+
+You may want to replace ftp.debian.org by a mirror closer to you. Order only matters if multiple sources have the exact same version (first APT determines which version to install, then it uses the first listed source that has this version).
+
+Once this is done, run sudo apt-get update and install the packages you want.
+
 Display Resolution
 ●    System -> Preferences -> Hardware -> Displays
 ●    It defaults to 1024x768
