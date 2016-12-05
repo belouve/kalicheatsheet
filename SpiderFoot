@@ -1,5 +1,60 @@
 Spiderfoot
+v2.8.0
 
 Some initial run of settings to change:
 
-DNS Settingss:
+Global:
+  Change User-Agent to:
+  Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+  Refer to https://techblog.willshouse.com/2012/01/03/most-common-user-agents/ for latest (yes, this updates)
+
+Bing:
+  Change to 10
+
+BotScout:
+  Enter API
+  
+Darknet:
+  Change to 10
+  
+DNS Settings:
+  Changes Common Subdomains to:
+  www,mail,remote,blog,webmail,server,smtp,secure,vpn,m,shop,ftp,mail2,test,portal,ns,host,support,dev,dns,mx,gw,proxy,ssl,fw,gateway,firewall,www1,www2,ns0,ns1,ns2,dns0,dns1,dns2,mx1,mx2,web
+
+E-mail:
+  Set to True
+
+Google:
+  Change to 10
+
+Honeypot Checker:
+  Enter API
+  
+Interesting Files:
+  Set to google and 10
+  
+Malicious Check
+  Will fine-tune based on errors, disable those that do not work
+  Feodo Comain Check errors
+  Palevo Domain Check errors
+  
+Malware Patrol
+  Enter API
+  
+Pwned Password
+  Set to false
+
+Shodan
+  Enter API
+  
+Social Profiles
+  Set to google
+  
+VirusTotal
+  Enter API
+  
+X-Force Exchange
+  Enter API
+  
+Yahoo
+  Change to 10
