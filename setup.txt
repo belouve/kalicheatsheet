@@ -171,13 +171,15 @@ NoSQLMap
 Spiderfoot
 ●	Open Source Footprinting Tool
 ●	mkdir /opt/spiderfoot/ && cd /opt/spiderfoot
-●	wget http://sourceforge.net/projects/spiderfoot/files/spiderfoot-2.3.0-src.tar.gz/download
+●	wget http://sourceforge.net/projects/spiderfoot/files/spiderfoot-2.7.1-src.tar.gz/download
+●	OR:  git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
 ●	tar xzvf download
 ●	pip install lxml
 ●	pip install netaddr
 ●	pip install M2Crypto
 ●	pip install cherrypy
 ●	pip install mako
+To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 
 
 WCE
