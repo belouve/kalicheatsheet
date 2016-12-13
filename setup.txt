@@ -1,4 +1,4 @@
-Updates:
+**Updates:**
 1.0 Initial Copy
 1.1 Added HexChat installation command
 1.2 Creating a normal user with sudo permissions
@@ -16,7 +16,7 @@ Installation and configuration for Kali Linux is not really "plug and play"...so
 For your VM, you may need some extra tools.
 ●	Oracle VM VirtualBox Extension Pack ( https://www.virtualbox.org/wiki/Downloads )
 
-Once Your Kali VM is Up and Running
+**Once Your Kali VM is Up and Running**
 ●	Log in with the username root and the default password toor
 ●	Open a terminal
 ●	Change the password
@@ -50,7 +50,7 @@ Once Your Kali VM is Up and Running
 
 Now may be a good time to setup a new normal user to be able to use sudo, and not run everything as root
 
-Tool Installation
+**Tool Installation**
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
@@ -119,11 +119,11 @@ SQLMap
 ●	SQL Injection tool
 ●	git clone https://github.com/sqlmapproject/sqlmap /opt/sqlmap
 
-Recon-ng
+**Recon-ng**
 ●	A full-featured web reconnaissance framework written in Python
 ●	git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git /opt/recon-ng
 
-Discover Scripts
+**Discover Scripts**
 ●	Custom bash scripts used to automate various pentesting tasks.
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
 ●	cd /opt/discover && ./update.sh
@@ -286,7 +286,7 @@ Phishing (Optional):
 
 It is also recommended to configure a Windows Virtual Machine.  This will be detailed in a separate "cheat sheet"
 
-Extras from Belouve:
+**Extras from Belouve:**
 
 Create a new normal user with sudo permission in Kali Linux
 ●	Open a terminal and issue the following command:
@@ -304,13 +304,18 @@ Create a new normal user with sudo permission in Kali Linux
 ●	All done.! you are all set. You could logout and login to your new account.
 
 
-HexChat
+**HexChat**
 ●	IRC Client
 ●	apt update && apt install -y hexchat
 ●	Then theme it by grabbing theme of https://dl.hexchat.net/themes/MatriY.hct
 ●	More themes at https://hexchat.github.io/themes.html
 ●	unzip ~/Downloads/MatriY.hct -d ~/.config/hexchat
 ●	/.config is a hidden folder in your Home directory /home/belouve
+
+SSHpass
+●	SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt. This will very helpful for scripting. SSHPass is not good to use in multi-user environment. If you use SSHPass on your development machine, it don't do anything evil.
+●	I use this to get a quick login for my SSH tunnel
+●	apt-get install sshpass
 
 Setting proxies:
 Acquire::http::proxy  "http://10.EXA.MPL.E0:3128/";
