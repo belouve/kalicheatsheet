@@ -31,8 +31,11 @@ For your VM, you may need some extra tools.
 ●	Start and stop the Metasploit service (this will setup the database.yml file for you)
 	○	service metasploit start (this threw an error in most recent run...will investigate)
 	○	service metasploit stop
+		Try this: msfdb init
+		msfconsole
+		msf > db_status	
 ●	Install gedit
-	○	apt-get install gedit
+	○	apt-get install gedit (Response of 'already latest version')
 ●	After this I did a apt autoremove as cleanup...I'll see if that negatively impacted anything
 
 ●	Change the hostname - Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
