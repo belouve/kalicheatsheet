@@ -57,12 +57,12 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
-●	cd the-backdoor-factory
+●	cd /opt/the-backdoor-factory
 ●	./install.sh
 
 HTTPScreenShot
 ●	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
-●	pip install selenium
+●	pip install selenium  (gave error in latest run)
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
 ●	cd /opt/httpscreenshot
 ●	chmod +x install-dependencies.sh && ./install-dependencies.sh
@@ -96,10 +96,11 @@ Gitrob
 ●	service postgresql start
 ●	su postgres
 ●	createuser -s gitrob --pwprompt
+	set a default password, 'gitrob' if you like the root/toor combo
 ●	createdb -O gitrob gitrob
 ●	exit
 ●	cd /opt/gitrob/bin
-●	gem install gitrob
+●	gem install gitrob (this step seems to have failed in latest run)
 
 CMSmap
 ●	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
@@ -113,6 +114,9 @@ WPScan
 Eyewitness
 ●	EyeWitness is designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.
 ●	git clone https://github.com/ChrisTruncer/EyeWitness.git /opt/EyeWitness
+●	cd /opt/EyeWitness/setup
+●	./setup.sh
+
 
 Printer Exploits
 ●	Contains a number of commonly found printer exploits
@@ -129,6 +133,7 @@ SQLMap
 **Discover Scripts**
 ●	Custom bash scripts used to automate various pentesting tasks.
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
+	OR USE MINE - git clone https://github.com/belouve/discover.git /opt/discover
 ●	cd /opt/discover && ./update.sh
 
 BeEF Exploitation Framework
@@ -164,12 +169,14 @@ DSHashes:
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
-●	apt-get install python-elixir
+●	apt-get install python-elixirsponse of 'already the latest version')
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
 
 NoSQLMap
 ●	A automated pentesting toolset for MongoDB database servers and web applications.
 ●	git clone https://github.com/tcstool/NoSQLMap.git /opt/NoSQLMap
+●	cd /opt/NoSQLMap
+●	python setup.py install
 
 Spiderfoot
 ●	Open Source Footprinting Tool
@@ -177,17 +184,18 @@ Spiderfoot
 ●	wget http://sourceforge.net/projects/spiderfoot/files/spiderfoot-2.7.1-src.tar.gz/download
 ●	OR:  git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
 ●	tar xzvf download
-●	pip install lxml
-●	pip install netaddr
-●	pip install M2Crypto
+●	pip install lxml (Response 'requirement already satisfied')
+●	pip install netaddr (Response 'requirement already satisfied')
+●	pip install M2Crypto (Response 'requirement already satisfied')
 ●	pip install cherrypy
-●	pip install mako
+●	pip install mako (Response 'requirement already satisfied')
 To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 
 
 WCE
 ●	Windows Credential Editor (WCE) is used to pull passwords from memory
 ●	Download from: http://www.ampliasecurity.com/research/windows-credentials-editor/ and save to /opt/. For example:
+	○	cd /opt/
 	○	wget www.ampliasecurity.com/research/wce_v1_4beta_universal.zip
 	○	mkdir /opt/wce && unzip wce_v1* -d /opt/wce && rm wce_v1*.zip
 
@@ -210,15 +218,18 @@ PowerSploit (PowerShell)
 Nishang (PowerShell)
 ●	Collection of PowerShell scripts for exploitation and post exploitation
 ●	git clone https://github.com/samratashok/nishang /opt/nishang
+●	Reponse: folder was already there
 
 Veil-Framework
 ●	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
 ●	cd /opt/Veil/ && ./Install.sh -c
+●	This can take a chunk of time.  Coffee break.
 
 Burp Suite Pro
 ●	Web Penetration Testing Tool
 ●	Download: http://portswigger.net/burp/proxy.html. I would highly recommend that you buy the professional version. It is well worth the $299 price tag.
+●	Built into current Kali, just make sure you have it updated.  Read the burp file under Notes for ideas on configuration
 
 ZAP Proxy Pro
 ●	OWASP ZAP: An easy-to-use integrated penetration testing tool for discovering vulnerabilities in web applications.
@@ -274,6 +285,8 @@ Installing wmap
 Wifite
 ●	Attacks against WiFi networks
 ●	git clone https://github.com/derv82/wifite /opt/wifite
+●	chmod +x wifite.py
+●	./wifite.py  (to do initial launches)
 
 WIFIPhisher
 ●	Automated phishing attacks against WiFi networks
