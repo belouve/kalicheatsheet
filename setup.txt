@@ -62,7 +62,7 @@ The Backdoor Factory:
 
 HTTPScreenShot
 ●	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
-●	pip install selenium  (gave error in latest run)
+●	pip install selenium  (in latest run: requirement already satisfied in python2.7)
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
 ●	cd /opt/httpscreenshot
 ●	chmod +x install-dependencies.sh && ./install-dependencies.sh
@@ -80,7 +80,9 @@ SMBExec
 ●	Select all defaults
 ●	./install.sh
 ●	Select 4 to compile smbexec binaries
+	Most recent run generated error, directed to check prerequisites
 ●	After compilation, select 5 to exit
+
 Masscan
 ●	This is the fastest Internet port scanner. It can scan the entire Internet in under six minutes.
 ●	apt-get install git gcc make libpcap-dev
@@ -100,11 +102,12 @@ Gitrob
 ●	createdb -O gitrob gitrob
 ●	exit
 ●	cd /opt/gitrob/bin
-●	gem install gitrob (this step seems to have failed in latest run)
+●	gem install gitrob (this step seems to have failed in last two runs)
 
 CMSmap
 ●	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
 ●	git clone https://github.com/Dionach/CMSmap /opt/CMSmap
+●	Nothing further after clone
 
 WPScan
 ●	WordPress vulnerability scanner and brute-force tool
@@ -125,6 +128,8 @@ Printer Exploits
 SQLMap
 ●	SQL Injection tool
 ●	git clone https://github.com/sqlmapproject/sqlmap /opt/sqlmap
+●	GIT Site gives a command of: git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+●	Nothing further after clone
 
 **Recon-ng**
 ●	A full-featured web reconnaissance framework written in Python
@@ -146,6 +151,7 @@ BeEF Exploitation Framework
 Responder
 ●	A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Responder will be used to gain NTLM challenge/response hashes
 ●	git clone https://github.com/SpiderLabs/Responder.git /opt/Responder
+●	Nothing further after clone
 
 The Hacker Playbook 2 - Custom Scripts
 ●	A number of custom scripts written by myself for The Hacker Playbook 2.
@@ -165,11 +171,12 @@ The Hacker Playbook 2 - Forked Versions
 DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
+Error 404 Not Found
 
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
-●	apt-get install python-elixirsponse of 'already the latest version')
+●	apt-get install python-elixir (response of 'already the latest version')
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
 
 NoSQLMap
@@ -202,7 +209,7 @@ WCE
 Mimikatz
 ●	Used for pulling cleartext passwords from memory, Golden Ticket, skeleton key and more
 ●	Grab the newest release from https://github.com/gentilkiwi/mimikatz/releases/latest
-	○	cd /opt/ && wget http://blog.gentilkiwi.com/downloads/mimikatz_trunk.zip
+	○	cd /opt/ && wget https://github.com/gentilkiwi/mimikatz/releases/download/2.1.0-20161126/mimikatz_trunk.zip
 	○	unzip -d ./mimikatz mimikatz_trunk.zip
 
 SET
@@ -218,34 +225,50 @@ PowerSploit (PowerShell)
 Nishang (PowerShell)
 ●	Collection of PowerShell scripts for exploitation and post exploitation
 ●	git clone https://github.com/samratashok/nishang /opt/nishang
-●	Reponse: folder was already there
+●	Reponse: folder was already there (From Hacker Playbook 2 Forked Versions, see above)
 
 Veil-Framework
 ●	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
 ●	cd /opt/Veil/ && ./Install.sh -c
-●	This can take a chunk of time.  Coffee break.
+●	This can take a chunk of time.  Coffee break.  But does ask for some responses periodically.
 
 Burp Suite Pro
 ●	Web Penetration Testing Tool
 ●	Download: http://portswigger.net/burp/proxy.html. I would highly recommend that you buy the professional version. It is well worth the $299 price tag.
 ●	Built into current Kali, just make sure you have it updated.  Read the burp file under Notes for ideas on configuration
 
+Fuzzing Lists (SecLists)
+●	These are scripts to use with Burp to fuzz parameters
+●	git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
+
+Net-Creds Network Parsing 
+●	Parse PCAP files for username/passwords
+●	git clone https://github.com/DanMcInerney/net-creds.git /opt/net-creds
+
 ZAP Proxy Pro
 ●	OWASP ZAP: An easy-to-use integrated penetration testing tool for discovering vulnerabilities in web applications.
 ●	Download from: https://code.google.com/p/zaproxy/wiki/Downloads?tm=2
 ●	*Included by default in Kali Linux (owasp-zap)
 
-Fuzzing Lists (SecLists)
-●	These are scripts to use with Burp to fuzz parameters
-●	git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
+Wifite
+●	Attacks against WiFi networks
+●	git clone https://github.com/derv82/wifite /opt/wifite
+●	chmod +x wifite.py
+●	./wifite.py  (to do initial launches)
+
+WIFIPhisher
+●	Automated phishing attacks against WiFi networks
+●	git clone https://github.com/sophron/wifiphisher.git /opt/wifiphisher
+
+Phishing (Optional):
+●	Phishing-Frenzy
+	○	git clone https://github.com/pentestgeek/phishing-frenzy.git /var/www/phishing-frenzy
+●	Custom List of Extras
+	○	git clone https://github.com/macubergeek/gitlist.git /opt/gitlist
 
 Password Lists
 ●	For the different password lists, see the section: Special Teams - Cracking, Exploits, and Tricks
-
-Net-Creds Network Parsing 
-●	Parse PCAP files for username/passwords
-●	git clone https://github.com/DanMcInerney/net-creds.git /opt/net-creds
 
 Installing Firefox Add-ons
 ●	Web Developer Add-on: https://addons.mozilla.org/en-US/firefox/addon/web-developer/
@@ -282,21 +305,6 @@ Installing wmap
 ●	Click "ADD TO CHROME"
 ●	A pop up should appear asking for confirmation to Add "wmap".  Click "Add extension"
 
-Wifite
-●	Attacks against WiFi networks
-●	git clone https://github.com/derv82/wifite /opt/wifite
-●	chmod +x wifite.py
-●	./wifite.py  (to do initial launches)
-
-WIFIPhisher
-●	Automated phishing attacks against WiFi networks
-●	git clone https://github.com/sophron/wifiphisher.git /opt/wifiphisher
-
-Phishing (Optional):
-●	Phishing-Frenzy
-	○	git clone https://github.com/pentestgeek/phishing-frenzy.git /var/www/phishing-frenzy
-●	Custom List of Extras
-	○	git clone https://github.com/macubergeek/gitlist.git /opt/gitlist
 
 *Remember to check http://thehackerplaybook.com/updates/ for any updates.
 
