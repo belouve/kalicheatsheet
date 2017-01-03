@@ -36,6 +36,11 @@ For your VM, you may need some extra tools.
 		msf > db_status	
 ●	Install gedit
 	○	apt-get install gedit (Response of 'already latest version')
+●	Configure gedit
+	○	Preferences
+	○	View: Display line numbers, Highlight current line
+	○	Editor: Tab width 5, Insert spaces instead of tabs
+	○	Color Scheme: Oblivion
 ●	After this I did a apt autoremove as cleanup...I'll see if that negatively impacted anything
 
 ●	Change the hostname - Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
