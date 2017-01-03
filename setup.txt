@@ -242,6 +242,12 @@ Burp Suite Pro
 ●	Web Penetration Testing Tool
 ●	Download: http://portswigger.net/burp/proxy.html. I would highly recommend that you buy the professional version. It is well worth the $299 price tag.
 ●	Built into current Kali, just make sure you have it updated.  Read the burp file under Notes for ideas on configuration
+●	Updating BurpSuite
+	○	Download the latest jar file from https://portswigger.net/burp/download.html
+	○	Navigate to /usr/bin and rename burpsuite to burpsuite(old)
+	○	Copy the jar that was just downloaded into /usr/bin
+	○	Rename the jar to burpsuite (yes, just burpsuite, no extension), and Allow executing file as program
+	○	Upon successful launch, you can delete burpsuite(old) from /usr/bin.
 
 Fuzzing Lists (SecLists)
 ●	These are scripts to use with Burp to fuzz parameters
