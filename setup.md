@@ -12,19 +12,17 @@
 
 ## Download, Install, and Credits
 
-You can download the Kali Linux distro from: http://www.kali.org/downloads/. 
+Go and [download the Kali Linux distro](http://www.kali.org/downloads/)
 
-I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
+I highly recommend you [download the VMware image](https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
-A lot of info is derived from The Hacker Playbook 2 http://www.amazon.com/dp/1512214566/
-
-I have a signed copy, and I intend to get a non-signed copy to bang around and make notes in.
+A lot of info is derived from [The Hacker Playbook 2](http://www.amazon.com/dp/1512214566/). I have a signed copy, and I intend to get a non-signed copy to bang around and make notes in.
 
 Installation and configuration for Kali Linux is not really "plug and play"...so here are a bunch of config notes.
 
 For your VM, you may need some extra tools.
 
-●	Oracle VM VirtualBox Extension Pack ( https://www.virtualbox.org/wiki/Downloads )
+●	[Oracle VM VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads)
 
 ## Once Your Kali VM is Up and Running
 
@@ -231,7 +229,7 @@ Collection of PowerShell scripts for exploitation and post exploitation:
 ○	Extracts user hashes in a user-friendly format for NTDSXtract
 ```
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
-●	Error 404 Not Found
+     >> Error 404 Not Found
 ```
 
 ### SPARTA:
@@ -393,11 +391,12 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ```
 
 ### Installing wmap
+```
 ●	​Go to the webstore (url: https://chrome.google.com/webstore/)
 ●	Search for wmap
 ●	Click "ADD TO CHROME"
 ●	A pop up should appear asking for confirmation to Add "wmap".  Click "Add extension"
-
+```
 
 *Remember to check http://thehackerplaybook.com/updates/ for any updates.
 
