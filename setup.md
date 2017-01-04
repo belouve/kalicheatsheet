@@ -1,9 +1,16 @@
+# Kali Linux Setup Cheatsheet
+
+```
 **Updates:**
 1.0 Initial Copy
 1.1 Added HexChat installation command
 1.2 Creating a normal user with sudo permissions
 1.3 Tidying, added detail of Chromium and wmap
+1.4 Made into an .md file
 .: You can find me on Twitter @ulicbelouve :.
+```
+
+## Download, Install, and Credits
 
 You can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
@@ -16,7 +23,9 @@ Installation and configuration for Kali Linux is not really "plug and play"...so
 For your VM, you may need some extra tools.
 ●	Oracle VM VirtualBox Extension Pack ( https://www.virtualbox.org/wiki/Downloads )
 
-**Once Your Kali VM is Up and Running**
+## Once Your Kali VM is Up and Running
+
+```
 ●	Log in with the username root and the default password toor
 ●	Open a terminal
 ●	Change the password
@@ -41,15 +50,21 @@ For your VM, you may need some extra tools.
 	○	View: Display line numbers, Highlight current line
 	○	Editor: Tab width 5, Insert spaces instead of tabs
 	○	Color Scheme: Oblivion
-●	After this I did a apt autoremove as cleanup...I'll see if that negatively impacted anything
+●	After this I did a apt autoremove as cleanup
+```
 
-●	Change the hostname - Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
+
+## Change the hostname
+Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
+```
 	○	gedit /etc/hostname
 		■	Change the hostname (replace kali) and save
 		■	I like to rename it loki, the trickster.  Or REDSHIRT, for a test box.  "REDSHIRT is down" is a great error message.
 	○	gedit /etc/hosts
 		■	Change the hostname (replace kali) and save
 	○	reboot
+```
+
 ●	*Optional for Metasploit - Enable Logging
 	○	I list this as optional since logs get pretty big, but you have the ability to log every command and result from Metasploit’s Command Line Interface (CLI). This becomes very useful for bulk attack/queries or if your client requires these logs. *If this is a fresh image, type msfconsole first and exit before configuring logging to create the .msf4 folder.
 	○	From a command prompt, type:
@@ -58,15 +73,19 @@ For your VM, you may need some extra tools.
 
 Now may be a good time to setup a new normal user to be able to use sudo, and not run everything as root
 
-**Tool Installation**
-The Backdoor Factory:
+## Tool Installation
+
+### The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
+```
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
 ●	cd /opt/the-backdoor-factory
 ●	./install.sh
+```
 
-HTTPScreenShot
+### HTTPScreenShot
 ●	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
+```
 ●	pip install selenium  (in latest run: requirement already satisfied in python2.7)
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
 ●	cd /opt/httpscreenshot
@@ -76,9 +95,11 @@ HTTPScreenShot
 	○	bzip2 -d phantomjs-1.9.8-linux-i686.tar.bz2
 	○	tar xvf phantomjs-1.9.8-linux-i686.tar
 	○	cp phantomjs-1.9.8-linux-i686/bin/phantomjs /usr/bin/
+```
 
-SMBExec
+### SMBExec
 ●	A rapid psexec style attack with samba tools.
+```
 ●	git clone https://github.com/pentestgeek/smbexec.git /opt/smbexec
 ●	cd /opt/smbexec && ./install.sh
 ●	Select 1 - Debian/Ubuntu and derivatives
@@ -87,17 +108,21 @@ SMBExec
 ●	Select 4 to compile smbexec binaries
 	Most recent run generated error, directed to check prerequisites
 ●	After compilation, select 5 to exit
+```
 
-Masscan
+### Masscan
 ●	This is the fastest Internet port scanner. It can scan the entire Internet in under six minutes.
+```
 ●	apt-get install git gcc make libpcap-dev
 ●	git clone https://github.com/robertdavidgraham/masscan.git /opt/masscan
 ●	cd /opt/masscan
 ●	make
 ●	make install
+```
 
-Gitrob
+### Gitrob
 ●	Reconnaissance tool for GitHub organizations
+```
 ●	git clone https://github.com/michenriksen/gitrob.git /opt/gitrob
 ●	gem install bundler
 ●	service postgresql start
@@ -108,75 +133,99 @@ Gitrob
 ●	exit
 ●	cd /opt/gitrob/bin
 ●	gem install gitrob (this step seems to have failed in last two runs)
+```
 
-CMSmap
+### CMSmap
 ●	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
+```
 ●	git clone https://github.com/Dionach/CMSmap /opt/CMSmap
 ●	Nothing further after clone
+```
 
-WPScan
+### WPScan
 ●	WordPress vulnerability scanner and brute-force tool
+```
 ●	git clone https://github.com/wpscanteam/wpscan.git /opt/wpscan
 ●	cd /opt/wpscan && ./wpscan.rb --update
+```
 
-Eyewitness
+### Eyewitness
 ●	EyeWitness is designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.
+```
 ●	git clone https://github.com/ChrisTruncer/EyeWitness.git /opt/EyeWitness
 ●	cd /opt/EyeWitness/setup
 ●	./setup.sh
+```
 
-
-Printer Exploits
+### Printer Exploits
 ●	Contains a number of commonly found printer exploits
+```
 ●	git clone https://github.com/MooseDojo/praedasploit /opt/praedasploit
+```
 
-SQLMap
+### SQLMap
 ●	SQL Injection tool
+```
 ●	git clone https://github.com/sqlmapproject/sqlmap /opt/sqlmap
 ●	GIT Site gives a command of: git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 ●	Nothing further after clone
+```
 
-**Recon-ng**
+### Recon-ng
 ●	A full-featured web reconnaissance framework written in Python
+```
 ●	git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git /opt/recon-ng
+```
 
-**Discover Scripts**
+### Discover Scripts
 ●	Custom bash scripts used to automate various pentesting tasks.
+```
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
 	OR USE MINE - git clone https://github.com/belouve/discover.git /opt/discover
 ●	cd /opt/discover && ./update.sh
+```
 
-BeEF Exploitation Framework
+### BeEF Exploitation Framework
 ●	A cross-site scripting attack framework
+```
 ●	cd /opt/
 ●	wget https://raw.github.com/beefproject/beef/a6a7536e/install-beef
 ●	chmod +x install-beef
 ●	./install-beef
+```
 
-Responder
+### Responder
 ●	A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Responder will be used to gain NTLM challenge/response hashes
+```
 ●	git clone https://github.com/SpiderLabs/Responder.git /opt/Responder
 ●	Nothing further after clone
+```
 
-The Hacker Playbook 2 - Custom Scripts
-●	A number of custom scripts written by myself for The Hacker Playbook 2.
+### The Hacker Playbook 2 - Custom Scripts
+●	A number of custom scripts written by Peter Kim for The Hacker Playbook 2.
+```
 ●	git clone https://github.com/cheetz/Easy-P.git /opt/Easy-P
 ●	git clone https://github.com/cheetz/Password_Plus_One /opt/Password_Plus_One
 ●	git clone https://github.com/cheetz/PowerShell_Popup /opt/PowerShell_Popup
 ●	git clone https://github.com/cheetz/icmpshock /opt/icmpshock
 ●	git clone https://github.com/cheetz/brutescrape /opt/brutescrape
 ●	git clone https://www.github.com/cheetz/reddit_xss /opt/reddit_xss
+```
 
-The Hacker Playbook 2 - Forked Versions
+### The Hacker Playbook 2 - Forked Versions
 ●	Forked versions of PowerSploit and Powertools used in the book. Make sure you clone your own repositories from the original sources.
+```
 ●	git clone https://github.com/cheetz/PowerSploit /opt/HP_PowerSploit
 ●	git clone https://github.com/cheetz/PowerTools /opt/HP_PowerTools
 ●	git clone https://github.com/cheetz/nishang /opt/nishang
+```
 
-DSHashes:
+### DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
+```
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
-Error 404 Not Found
+●	Error 404 Not Found
+```
 
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
