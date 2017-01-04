@@ -13,10 +13,10 @@
 ## Download, Install, and Credits
 
 You can download the Kali Linux distro from: http://www.kali.org/downloads/. 
+
 I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
-A lot of info is derived from The Hacker Playbook 2
-http://www.amazon.com/dp/1512214566/
+A lot of info is derived from The Hacker Playbook 2 http://www.amazon.com/dp/1512214566/
 
 I have a signed copy, and I intend to get a non-signed copy to bang around and make notes in.
 
@@ -404,6 +404,7 @@ It is also recommended to configure a Windows Virtual Machine.  This will be det
 ## Extras from Belouve:
 
 ### Create a new normal user with sudo permission in Kali Linux
+```
 ●	Open a terminal and issue the following command:
 	●	useradd -m belouve
 	●	-m creates a home directory for the user (belouve in this example).
@@ -417,7 +418,7 @@ It is also recommended to configure a Windows Virtual Machine.  This will be det
 	●	chsh -s /bin/bash belouve
 	●	chsh command is used to change the login shell for a user. 
 ●	All done.! you are all set. You could logout and login to your new account.
-
+```
 
 ### HexChat
 ○	IRC Client
@@ -430,13 +431,16 @@ It is also recommended to configure a Windows Virtual Machine.  This will be det
 ```
 
 ### SSHpass
-○	SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt. This will very helpful for scripting. SSHPass is not good to use in multi-user environment. If you use SSHPass on your development machine, it don't do anything evil.
-●	I use this to get a quick login for my SSH tunnel
+○	SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt. This will very helpful for scripting. SSHPass is not good to use in multi-user environment. If you use SSHPass on your development machine, it don't do anything evil. I use this to get a quick login for my SSH tunnel
+```
 ●	apt-get install sshpass
+```
 
-Setting proxies:
+### Setting proxies:
+```
 Acquire::http::proxy  "http://10.EXA.MPL.E0:3128/";
 Acquire::ftp::proxy "http://10.EXA.MPL.E0:8080/";
 Acquire::https::proxy "http://10.EXA.MPL.E0:8080/";
 ●	Hey guess what? You need to have the ; at the end of each line
 ●	3128 is HTTP proxy, 8080 is HTTP, 443 is HTTPS over SSL
+```
