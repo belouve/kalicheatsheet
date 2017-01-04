@@ -12,15 +12,18 @@
 
 ## Download, Install, and Credits
 
-You can download the Kali Linux distro from: http://www.kali.org/downloads/. I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
+You can download the Kali Linux distro from: http://www.kali.org/downloads/. 
+I highly recommend you download the VMware image (https://www.offensive-security.com/kali-linux-vmware-arm-image-download/) and download Virtual Player/VirtualBox. Remember that it will be a gz-compressed and tar archived file, so make sure to extract them first and load the vmx file.
 
 A lot of info is derived from The Hacker Playbook 2
 http://www.amazon.com/dp/1512214566/
+
 I have a signed copy, and I intend to get a non-signed copy to bang around and make notes in.
 
 Installation and configuration for Kali Linux is not really "plug and play"...so here are a bunch of config notes.
 
 For your VM, you may need some extra tools.
+
 ●	Oracle VM VirtualBox Extension Pack ( https://www.virtualbox.org/wiki/Downloads )
 
 ## Once Your Kali VM is Up and Running
@@ -65,18 +68,19 @@ Many network admins look for systems named Kali in logs like DHCP. It is best to
 	○	reboot
 ```
 
-●	*Optional for Metasploit - Enable Logging
-	○	I list this as optional since logs get pretty big, but you have the ability to log every command and result from Metasploit’s Command Line Interface (CLI). This becomes very useful for bulk attack/queries or if your client requires these logs. *If this is a fresh image, type msfconsole first and exit before configuring logging to create the .msf4 folder.
-	○	From a command prompt, type:
-		■	echo “spool /root/msf_console.log” > /root/.msf4/msfconsole.rc
-	○	Logs will be stored at /root/msf_console.log
-
+### Optional for Metasploit - Enable Logging
+○	I list this as optional since logs get pretty big, but you have the ability to log every command and result from Metasploit’s Command Line Interface (CLI). This becomes very useful for bulk attack/queries or if your client requires these logs. *If this is a fresh image, type msfconsole first and exit before configuring logging to create the .msf4 folder.
+```	
+●	From a command prompt, type:
+	○	echo “spool /root/msf_console.log” > /root/.msf4/msfconsole.rc	
+●	Logs will be stored at /root/msf_console.log
+```
 Now may be a good time to setup a new normal user to be able to use sudo, and not run everything as root
 
 ## Tool Installation
 
 ### The Backdoor Factory:
-●	Patch PE, ELF, Mach-O binaries with shellcode.
+○	Patch PE, ELF, Mach-O binaries with shellcode.
 ```
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
 ●	cd /opt/the-backdoor-factory
@@ -84,7 +88,7 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### HTTPScreenShot
-●	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
+○	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
 ```
 ●	pip install selenium  (in latest run: requirement already satisfied in python2.7)
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
@@ -98,7 +102,7 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### SMBExec
-●	A rapid psexec style attack with samba tools.
+○	A rapid psexec style attack with samba tools.
 ```
 ●	git clone https://github.com/pentestgeek/smbexec.git /opt/smbexec
 ●	cd /opt/smbexec && ./install.sh
@@ -111,7 +115,7 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### Masscan
-●	This is the fastest Internet port scanner. It can scan the entire Internet in under six minutes.
+○	This is the fastest Internet port scanner. It can scan the entire Internet in under six minutes.
 ```
 ●	apt-get install git gcc make libpcap-dev
 ●	git clone https://github.com/robertdavidgraham/masscan.git /opt/masscan
@@ -121,7 +125,7 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### Gitrob
-●	Reconnaissance tool for GitHub organizations
+○	Reconnaissance tool for GitHub organizations
 ```
 ●	git clone https://github.com/michenriksen/gitrob.git /opt/gitrob
 ●	gem install bundler
@@ -136,21 +140,21 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### CMSmap
-●	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
+○	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
 ```
 ●	git clone https://github.com/Dionach/CMSmap /opt/CMSmap
 ●	Nothing further after clone
 ```
 
 ### WPScan
-●	WordPress vulnerability scanner and brute-force tool
+○	WordPress vulnerability scanner and brute-force tool
 ```
 ●	git clone https://github.com/wpscanteam/wpscan.git /opt/wpscan
 ●	cd /opt/wpscan && ./wpscan.rb --update
 ```
 
 ### Eyewitness
-●	EyeWitness is designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.
+○	EyeWitness is designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.
 ```
 ●	git clone https://github.com/ChrisTruncer/EyeWitness.git /opt/EyeWitness
 ●	cd /opt/EyeWitness/setup
@@ -158,13 +162,13 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### Printer Exploits
-●	Contains a number of commonly found printer exploits
+○	Contains a number of commonly found printer exploits
 ```
 ●	git clone https://github.com/MooseDojo/praedasploit /opt/praedasploit
 ```
 
 ### SQLMap
-●	SQL Injection tool
+○	SQL Injection tool
 ```
 ●	git clone https://github.com/sqlmapproject/sqlmap /opt/sqlmap
 ●	GIT Site gives a command of: git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
@@ -172,13 +176,13 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### Recon-ng
-●	A full-featured web reconnaissance framework written in Python
+○	A full-featured web reconnaissance framework written in Python
 ```
 ●	git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git /opt/recon-ng
 ```
 
 ### Discover Scripts
-●	Custom bash scripts used to automate various pentesting tasks.
+○	Custom bash scripts used to automate various pentesting tasks.
 ```
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
 	OR USE MINE - git clone https://github.com/belouve/discover.git /opt/discover
@@ -186,7 +190,7 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### BeEF Exploitation Framework
-●	A cross-site scripting attack framework
+○	A cross-site scripting attack framework
 ```
 ●	cd /opt/
 ●	wget https://raw.github.com/beefproject/beef/a6a7536e/install-beef
@@ -195,14 +199,14 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### Responder
-●	A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Responder will be used to gain NTLM challenge/response hashes
+○	A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Responder will be used to gain NTLM challenge/response hashes
 ```
 ●	git clone https://github.com/SpiderLabs/Responder.git /opt/Responder
 ●	Nothing further after clone
 ```
 
 ### The Hacker Playbook 2 - Custom Scripts
-●	A number of custom scripts written by Peter Kim for The Hacker Playbook 2.
+○	A number of custom scripts written by Peter Kim for The Hacker Playbook 2.
 ```
 ●	git clone https://github.com/cheetz/Easy-P.git /opt/Easy-P
 ●	git clone https://github.com/cheetz/Password_Plus_One /opt/Password_Plus_One
@@ -213,34 +217,40 @@ Now may be a good time to setup a new normal user to be able to use sudo, and no
 ```
 
 ### The Hacker Playbook 2 - Forked Versions
-●	Forked versions of PowerSploit and Powertools used in the book. Make sure you clone your own repositories from the original sources.
+○	Forked versions of PowerSploit and Powertools used in the book. Make sure you clone your own repositories from the original sources.
 ```
 ●	git clone https://github.com/cheetz/PowerSploit /opt/HP_PowerSploit
 ●	git clone https://github.com/cheetz/PowerTools /opt/HP_PowerTools
+Collection of PowerShell scripts for exploitation and post exploitation:
 ●	git clone https://github.com/cheetz/nishang /opt/nishang
 ```
 
 ### DSHashes:
-●	Extracts user hashes in a user-friendly format for NTDSXtract
+○	Extracts user hashes in a user-friendly format for NTDSXtract
 ```
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
 ●	Error 404 Not Found
 ```
 
-SPARTA:
-●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
+### SPARTA:
+○	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
+```
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
 ●	apt-get install python-elixir (response of 'already the latest version')
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
+```
 
-NoSQLMap
-●	A automated pentesting toolset for MongoDB database servers and web applications.
+### NoSQLMap
+○	An automated pentesting toolset for MongoDB database servers and web applications.
+```
 ●	git clone https://github.com/tcstool/NoSQLMap.git /opt/NoSQLMap
 ●	cd /opt/NoSQLMap
 ●	python setup.py install
+```
 
-Spiderfoot
-●	Open Source Footprinting Tool
+### Spiderfoot
+○	Open Source Footprinting Tool
+```
 ●	mkdir /opt/spiderfoot/ && cd /opt/spiderfoot
 ●	wget http://sourceforge.net/projects/spiderfoot/files/spiderfoot-2.7.1-src.tar.gz/download
 ●	OR:  git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
@@ -251,44 +261,50 @@ Spiderfoot
 ●	pip install cherrypy
 ●	pip install mako (Response 'requirement already satisfied')
 To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
+```
 
-
-WCE
-●	Windows Credential Editor (WCE) is used to pull passwords from memory
+### WCE
+○	Windows Credential Editor (WCE) is used to pull passwords from memory
+```
 ●	Download from: http://www.ampliasecurity.com/research/windows-credentials-editor/ and save to /opt/. For example:
 	○	cd /opt/
 	○	wget www.ampliasecurity.com/research/wce_v1_4beta_universal.zip
 	○	mkdir /opt/wce && unzip wce_v1* -d /opt/wce && rm wce_v1*.zip
+```
 
-Mimikatz
-●	Used for pulling cleartext passwords from memory, Golden Ticket, skeleton key and more
+### Mimikatz
+○	Used for pulling cleartext passwords from memory, Golden Ticket, skeleton key and more
+```
 ●	Grab the newest release from https://github.com/gentilkiwi/mimikatz/releases/latest
 	○	cd /opt/ && wget https://github.com/gentilkiwi/mimikatz/releases/download/2.1.0-20161126/mimikatz_trunk.zip
 	○	unzip -d ./mimikatz mimikatz_trunk.zip
+```
 
-SET
-●	Social Engineering Toolkit (SET) will be used for the social engineering campaigns
+### Social Engineering Toolkit (SET)
+○	This will be used for the social engineering campaigns
+```
 ●	git clone https://github.com/trustedsec/social-engineer-toolkit/ /opt/set/
 ●	cd /opt/set && ./setup.py install
+```
 
-PowerSploit (PowerShell)
-●	PowerShell scripts for post exploitation
+### PowerSploit (PowerShell)
+○	PowerShell scripts for post exploitation
+```
 ●	git clone https://github.com/mattifestation/PowerSploit.git /opt/PowerSploit
 ●	cd /opt/PowerSploit && wget https://raw.githubusercontent.com/obscuresec/random/master/StartListener.py && wget https://raw.githubusercontent.com/darkoperator/powershell_scripts/master/ps_encoder.py
+```
 
-Nishang (PowerShell)
-●	Collection of PowerShell scripts for exploitation and post exploitation
-●	git clone https://github.com/samratashok/nishang /opt/nishang
-●	Reponse: folder was already there (From Hacker Playbook 2 Forked Versions, see above)
-
-Veil-Framework
-●	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
+### Veil-Framework
+○	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
+```
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
 ●	cd /opt/Veil/ && ./Install.sh -c
 ●	This can take a chunk of time.  Coffee break.  But does ask for some responses periodically.
+```
 
-Burp Suite Pro
-●	Web Penetration Testing Tool
+### Burp Suite Pro
+○	Web Penetration Testing Tool
+```
 ●	Download: http://portswigger.net/burp/proxy.html. I would highly recommend that you buy the professional version. It is well worth the $299 price tag.
 ●	Built into current Kali, just make sure you have it updated.  Read the burp file under Notes for ideas on configuration
 ●	Updating BurpSuite
@@ -297,54 +313,68 @@ Burp Suite Pro
 	○	Copy the jar that was just downloaded into /usr/bin
 	○	Rename the jar to burpsuite (yes, just burpsuite, no extension), and Allow executing file as program
 	○	Upon successful launch, you can delete burpsuite(old) from /usr/bin.
-
-Fuzzing Lists (SecLists)
-●	These are scripts to use with Burp to fuzz parameters
+```
+### Fuzzing Lists (SecLists)
+○	These are scripts to use with Burp to fuzz parameters
+```
 ●	git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
+```
 
-Net-Creds Network Parsing 
-●	Parse PCAP files for username/passwords
+### Net-Creds Network Parsing 
+○	Parse PCAP files for username/passwords
+```
 ●	git clone https://github.com/DanMcInerney/net-creds.git /opt/net-creds
+```
 
-ZAP Proxy Pro
-●	OWASP ZAP: An easy-to-use integrated penetration testing tool for discovering vulnerabilities in web applications.
+### ZAP Proxy Pro
+○	OWASP ZAP: An easy-to-use integrated penetration testing tool for discovering vulnerabilities in web applications.
+```
 ●	Download from: https://code.google.com/p/zaproxy/wiki/Downloads?tm=2
 ●	*Included by default in Kali Linux (owasp-zap)
-
-Wifite
-●	Attacks against WiFi networks
+```
+### Wifite
+○	Attacks against WiFi networks
+```
 ●	git clone https://github.com/derv82/wifite /opt/wifite
 ●	chmod +x wifite.py
 ●	./wifite.py  (to do initial launches)
+```
 
-WIFIPhisher
-●	Automated phishing attacks against WiFi networks
+### WIFIPhisher
+○	Automated phishing attacks against WiFi networks
+```
 ●	git clone https://github.com/sophron/wifiphisher.git /opt/wifiphisher
+```
 
-Phishing (Optional):
+### Phishing (Optional):
+```
 ●	Phishing-Frenzy
 	○	git clone https://github.com/pentestgeek/phishing-frenzy.git /var/www/phishing-frenzy
 ●	Custom List of Extras
 	○	git clone https://github.com/macubergeek/gitlist.git /opt/gitlist
-
-Password Lists
+```
+### Password Lists
 ●	For the different password lists, see the section: Special Teams - Cracking, Exploits, and Tricks
 
-Installing Firefox Add-ons
+## Installing Firefox Add-ons
+```
 ●	Web Developer Add-on: https://addons.mozilla.org/en-US/firefox/addon/web-developer/
 ●	Tamper Data: https://addons.mozilla.org/en-US/firefox/addon/tamper-data/
 ●	Foxy Proxy: https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ●	User Agent Switcher: https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/
 ●	You can reboot your browser now
+```
 
-Installing Chromium
-●	Chromium is "an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web." I (@ulicbelouve) am a fan of Firefox, but this is another option, with wmap (see below)
-●	Open the terminal and type "apt-get install chromium"​
+## Installing Chromium
+○	Chromium is "an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web." I (@ulicbelouve) am a fan of Firefox, but this is another option, with wmap (see below)
+```
+●	apt-get install chromium
 ●	Type 'y' and hit the return key when prompted for confirmation
+```
 
-Configure Chromium / wmap
-●	If Chromium is opened, it will close in the background without apparent error.  The following configuration will allow Chromium to function with wmap.
-●	wmap is a mass web screenshot tool for mapping out large web networks. Feed it a list of URL(s) and/or Nmap scan data and it will generate you a screenshot report of those web services. Created to allow people to get a visual "map" of their web infrastructure.
+### Configure Chromium / wmap
+○	If Chromium is opened, it will close in the background without apparent error.  The following configuration will allow Chromium to function with wmap.  wmap is a mass web screenshot tool for mapping out large web networks. Feed it a list of URL(s) and/or Nmap scan data and it will generate you a screenshot report of those web services. Created to allow people to get a visual "map" of their web infrastructure.
+```
 ●	​​Edit the following file: /etc/chromium.d/default-flags
 ●	Add the following entries to the default-flags file
 	  export CHROMIUM_FLAGS="$CHROMIUM_FLAGS ​--no-sandbox"​
@@ -358,8 +388,9 @@ Configure Chromium / wmap
 	  ​The known way around this issue would be to designate a user specifically for chromium usage
 ●	You can see my additions below, on how to "Create a new normal user with sudo permission in Kali Linux", then it should not balk at the oversight
 ●	​If Chromium does not start, validate that the entries in the default-flags file are correct
+```
 
-Installing wmap
+### Installing wmap
 ●	​Go to the webstore (url: https://chrome.google.com/webstore/)
 ●	Search for wmap
 ●	Click "ADD TO CHROME"
@@ -370,9 +401,9 @@ Installing wmap
 
 It is also recommended to configure a Windows Virtual Machine.  This will be detailed in a separate "cheat sheet"
 
-**Extras from Belouve:**
+## Extras from Belouve:
 
-Create a new normal user with sudo permission in Kali Linux
+### Create a new normal user with sudo permission in Kali Linux
 ●	Open a terminal and issue the following command:
 	●	useradd -m belouve
 	●	-m creates a home directory for the user (belouve in this example).
@@ -388,16 +419,18 @@ Create a new normal user with sudo permission in Kali Linux
 ●	All done.! you are all set. You could logout and login to your new account.
 
 
-**HexChat**
-●	IRC Client
+### HexChat
+○	IRC Client
+```
 ●	apt update && apt install -y hexchat
 ●	Then theme it by grabbing theme of https://dl.hexchat.net/themes/MatriY.hct
 ●	More themes at https://hexchat.github.io/themes.html
 ●	unzip ~/Downloads/MatriY.hct -d ~/.config/hexchat
 ●	/.config is a hidden folder in your Home directory /home/belouve
+```
 
-SSHpass
-●	SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt. This will very helpful for scripting. SSHPass is not good to use in multi-user environment. If you use SSHPass on your development machine, it don't do anything evil.
+### SSHpass
+○	SSHPass is a tiny utility, which allows you to provide the ssh password without using the prompt. This will very helpful for scripting. SSHPass is not good to use in multi-user environment. If you use SSHPass on your development machine, it don't do anything evil.
 ●	I use this to get a quick login for my SSH tunnel
 ●	apt-get install sshpass
 
