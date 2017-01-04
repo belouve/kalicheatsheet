@@ -77,6 +77,8 @@ Many network admins look for systems named Kali in logs like DHCP. It is best to
 ```
 Now may be a good time to setup a new normal user to be able to use sudo, and not run everything as root
 
+See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-a-new-normal-user-with-sudo-permission-in-kali-linux
+
 ## Tool Installation
 
 ### The Backdoor Factory:
