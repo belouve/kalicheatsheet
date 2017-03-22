@@ -31,9 +31,12 @@ For your VM, you may need some extra tools.
 ●	Open a terminal
 ●	Change the password
 	○	passwd
-●	Update the image
+●	Update the image OR SUPERUPDATE
 	○	apt-get update
 	○	apt-get dist-upgrade
+●	Superupdate
+	○	Line to copy-paste if you want to drop it in a terminal:
+	○	apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get -y autoclean
 ●	Setup Metasploit database
 	○	service postgresql start
 ●	Make postgresql database start on boot
