@@ -297,12 +297,19 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ●	cd /opt/PowerSploit && wget https://raw.githubusercontent.com/obscuresec/random/master/StartListener.py && wget https://raw.githubusercontent.com/darkoperator/powershell_scripts/master/ps_encoder.py
 ```
 
+### Kadimuus
+○	Tool to check sites for Local File Inclusion (LFI) vulnerability, and also exploit it...
+```
+●	git clone https://github.com/P0cL4bs/Kadimus.git /opt/Kadimus
+●	cd /opt/Kadimus && ./configure
+```
+
 ### Veil-Framework
 ○	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
 ```
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
-●	cd /opt/Veil/ && ./Install.sh -c
-●	This can take a chunk of time.  Coffee break.  But does ask for some responses periodically.
+●	cd /opt/Veil/setup && ./setup.py
+●	This can take a chunk of time.  Coffee break.  But does ask for some responses periodically, and latest update allows quiet install.
 ```
 
 ### Burp Suite Pro
