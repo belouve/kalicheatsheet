@@ -38,13 +38,11 @@ For your VM, you may need some extra tools.
 	○	Line to copy-paste if you want to drop it in a terminal:
 	○	apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get -y autoclean
 ●	Setup Metasploit database
-	○	service postgresql start
+	○	service postgresql start (or, systemctl start postgresql)
 ●	Make postgresql database start on boot
 	○	update-rc.d postgresql enable
 ●	Start and stop the Metasploit service (this will setup the database.yml file for you)
-	○	service metasploit start (this threw an error in most recent run...will investigate)
-	○	service metasploit stop
-		Try this: msfdb init
+	○	Try this: msfdb init
 		msfconsole
 		msf > db_status	
 ●	Install gedit
@@ -93,7 +91,7 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ### HTTPScreenShot
 ○	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
 ```
-●	pip install selenium  (in latest run: requirement already satisfied in python2.7)
+●	pip install selenium  (in latest run: installed.  Previously: requirement already satisfied in python2.7)
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
 ●	cd /opt/httpscreenshot
 ●	chmod +x install-dependencies.sh && ./install-dependencies.sh
@@ -113,7 +111,7 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ●	Select all defaults
 ●	./install.sh
 ●	Select 4 to compile smbexec binaries
-	Most recent run generated error, directed to check prerequisites
+	Most recent run was fine, Previously: generated error, directed to check prerequisites
 ●	After compilation, select 5 to exit
 ```
 
@@ -131,6 +129,7 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ○	Reconnaissance tool for GitHub organizations
 ```
 ●	git clone https://github.com/michenriksen/gitrob.git /opt/gitrob
+●	cd /opt/gitrob
 ●	gem install bundler
 ●	service postgresql start
 ●	su postgres
@@ -139,7 +138,7 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ●	createdb -O gitrob gitrob
 ●	exit
 ●	cd /opt/gitrob/bin
-●	gem install gitrob (this step seems to have failed in last two runs)
+●	gem install gitrob (this step seems to have failed in last three runs)
 ```
 
 ### CMSmap
