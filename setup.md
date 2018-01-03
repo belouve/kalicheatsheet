@@ -329,8 +329,9 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ### Veil-Framework
 ○	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
 ```
+●	Check if you already have /opt/Veil/setup
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
-●	cd /opt/Veil/setup && ./setup.py
+●	cd /opt/Veil/setup && ./setup.py (or, most recently, ./setup.sh)
 ●	This can take a chunk of time.  Coffee break.  But does ask for some responses periodically, and latest update allows quiet install.
 ```
 
