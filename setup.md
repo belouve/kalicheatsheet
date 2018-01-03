@@ -96,6 +96,17 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ●	Now, do most of the remaining steps from within fish shell.  If anything has an && , either break it up, or invoke bash.
 ```
 
+### Lazy Script
+○	The LAZY script will make your life easier, and of course faster. https://github.com/arismelachroinos/lscript/blob/master/README.md
+```
+●	cd
+●	git clone https://github.com/arismelachroinos/lscript.git
+●	cd lscript
+●	chmod +x install.sh
+●	./install.sh
+●	Invoke with 'l'.  Yes, the first letter only, from the word lazy.  It's that lazy.
+```
+
 
 ### The Backdoor Factory:
 ○	Patch PE, ELF, Mach-O binaries with shellcode.
@@ -429,10 +440,6 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ●	Search for wmap
 ●	Click "ADD TO CHROME"
 ●	A pop up should appear asking for confirmation to Add "wmap".  Click "Add extension"
-```
-### Other things to install
-```
-●	Lazy Script (I'll expand on this later)
 ```
 
 
