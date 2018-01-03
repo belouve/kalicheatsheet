@@ -80,6 +80,14 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 
 ## Tool Installation
 
+### Terminator
+○	Allows multiple split windows of terminals, all within one tool.  No more opening multiple instances of terminal.  Run it, add to favorites, and never open regular terminal again, open this instead.
+```
+●	apt-get install terminator
+●	Now, Close your terminal and open up terminator. Right-click context menu allows you to split and make a new terminal.
+```
+
+
 ### Fish Shell
 ○	Should be one of the first things you install, and invoke this shell every time with the command 'fish'.  Sometimes you will have syntax issues, especially with any one-liners that have && .  In this case, invoke bash.
 ```
