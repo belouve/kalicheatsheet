@@ -80,6 +80,15 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 
 ## Tool Installation
 
+### Fish Shell
+○	Should be one of the first things you install, and invoke this shell every time with the command 'fish'.  Sometimes you will have syntax issues, especially with any one-liners that have && .  In this case, invoke bash.
+```
+●	apt-get install fish
+●	fish
+●	Now, do most of the remaining steps from within fish shell.  If anything has an && , either break it up, or invoke bash.
+```
+
+
 ### The Backdoor Factory:
 ○	Patch PE, ELF, Mach-O binaries with shellcode.
 ```
@@ -123,6 +132,12 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ●	cd /opt/masscan
 ●	make
 ●	make install
+```
+
+### zmap
+○	Very fast Internet port scanner. Good to quickly scan large IP ranges for open ports, then pivot to nmap
+```
+●	apt install zmap
 ```
 
 ### Gitrob
@@ -266,7 +281,7 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ```
 
 ### WCE
-○	Windows Credential Editor (WCE) is used to pull passwords from memory
+○	Windows Credential Editor (WCE) is used to pull passwords from memory. NOTE: WILL OFTEN BE BLOCKED BY YOUR FIREWALL
 ```
 ●	Download from: http://www.ampliasecurity.com/research/windows-credentials-editor/ and save to /opt/. For example:
 	○	cd /opt/
@@ -283,7 +298,7 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ```
 
 ### Social Engineering Toolkit (SET)
-○	This will be used for the social engineering campaigns
+○	This will be used for the social engineering campaigns.  Usually already installed, check your menu.
 ```
 ●	git clone https://github.com/trustedsec/social-engineer-toolkit/ /opt/set/
 ●	cd /opt/set && ./setup.py install
@@ -406,6 +421,11 @@ To run spiderfoot (possibly by cd /opt/spiderfoot and then ./sf.py )
 ●	Click "ADD TO CHROME"
 ●	A pop up should appear asking for confirmation to Add "wmap".  Click "Add extension"
 ```
+### Other things to install
+```
+●	Lazy Script (I'll expand on this later)
+```
+
 
 *Remember to check http://thehackerplaybook.com/updates/ for any updates.
 
