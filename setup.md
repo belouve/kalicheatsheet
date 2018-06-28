@@ -481,6 +481,17 @@ It is also recommended to configure a Windows Virtual Machine.  This will be det
 ```
 ●	apt-get install sshpass
 ```
+### iftop
+○	You'll need this in order to make sure bandwidth monitoring works.
+```
+●	apt-get install iftop
+```
+
+### Searchsploit update
+○	Periodically update SearchSploit, or add it to your update string (see SuperUpdate above)
+```
+●	searchsploit -u
+```
 
 ### Setting proxies:
 ```
