@@ -36,7 +36,7 @@ For your VM, you may need some extra tools.
 	○	apt-get dist-upgrade
 ●	Superupdate
 	○	Line to copy-paste if you want to drop it in a terminal:
-	○	apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get -y autoclean
+	○	apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get -y autoclean && searchsploit -u	
 ●	Setup Metasploit database
 	○	service postgresql start (or, systemctl start postgresql)
 ●	Make postgresql database start on boot
@@ -107,6 +107,17 @@ See here: https://github.com/belouve/kalicheatsheet/blob/master/setup.md#create-
 ●	Invoke with 'l'.  Yes, the first letter only, from the word lazy.  It's that lazy.
 ```
 
+### Pentester Framework:
+○	PTF attempts to install all of your penetration testing tools (latest and greatest), compile them, build them, and make it so that you can install/update your distribution on any machine. Everything is organized in a fashion that is cohesive to the Penetration Testing Execution Standard (PTES) and eliminates a lot of things that are hardly used. 
+```
+●	PTF: https://github.com/trustedsec/ptf
+●	For a video tutorial on how to use PTF, check out our Vimeo page here: https://vimeo.com/137133837
+●	git clone https://github.com/trustedsec/ptf
+If you want to install and/or update everything, simply do the following:
+	○	./ptf
+	○	use modules/install_update_all
+	○	yes
+```
 
 ### The Backdoor Factory:
 ○	Patch PE, ELF, Mach-O binaries with shellcode.
@@ -274,6 +285,14 @@ Collection of PowerShell scripts for exploitation and post exploitation:
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
 ●	apt-get install python-elixir (response of 'already the latest version')
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
+```
+
+### LEGION:
+○	Legion, a fork of SECFORCE’s Sparta, is an open source, easy-to-use, super-extensible and semi-automated network penetration testing framework that aids in discovery, reconnaissance and exploitation of information systems.
+```
+●	Legion: https://n0where.net/semi-automated-network-penetration-testing-framework-legion
+●	git clone https://github.com/GoVanguard/legion/ /opt/legion
+●	Not sure...yet...what to do after the git clone
 ```
 
 ### NoSQLMap
