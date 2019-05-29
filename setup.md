@@ -293,6 +293,9 @@ Collection of PowerShell scripts for exploitation and post exploitation:
 ●	Legion: https://n0where.net/semi-automated-network-penetration-testing-framework-legion
 ●	git clone https://github.com/GoVanguard/legion/ /opt/legion
 ●	cd /opt/legion
+●	THEY LIE WITH THE PREREQ!  you need to do:
+●	pip3 install pyShodan
+●	Then continue:
 ●	sudo chmod +x startLegion.sh
 ●	sudo ./startLegion.sh
 ●	Can always go to the github page for info and a gif demo
