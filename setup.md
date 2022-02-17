@@ -57,7 +57,9 @@ For your VM, you may need some extra tools.
 
 
 ## Change the hostname
-Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
+Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing.  This is still really essential in 2022 even, caught a pentester generating alerts and the hostname came up as "KALI".  If they blended with our environment would have tajken longer to identify and shut it down. Even a random LT5309 or SUPPORTLAPTOP would be great.
+
+Also, use OSINT here too.  If you know close tech partners of target, name the PC something relevant.  Healthcare? Make it HIPAA23.  Or troll, if pentesting McDonalds make your box name HOMEOFTHEWHOPPER or something.
 ```
 	○	gedit /etc/hostname
 		■	Change the hostname (replace kali) and save
